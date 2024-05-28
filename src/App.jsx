@@ -210,50 +210,53 @@ function App() {
 
   return (
     <>
-      <div className='flex items-center p-[1vw] border-b border-black'>
+      <div className='flex items-center z-10 p-[1vw] border-b-[0.2vw] border-black drop-shadow-2xl bg-white'>
         <img src={Icon} className='w-[2vw] h-[2vw]'/>
         <div className='w-[1vw]'/>
         <h1 className='text-black text-[1.5vw]'>Calcellator 3000</h1>
       </div>
       
-      <div className='h-[3vw]'/>
+      <div className='h-[2vw]'/>
 
-      <div className='flex w-full justify-center'>
-        <div className='flex flex-col w-[80%] xl:w-[40%] p-[2vw] bg-gray-400 border-[0.05vw] border-black'>
-          <div className='w-full h-[2vw] p-[0.5vw] bg-white' readonly>
-            <p className='text-[1vw] text-right overflow-x-auto'>{firstValue} {operationSwitch(operation)} {secondValue}</p>
+      <div className='flex w-full justify-center items-center'>
+      <h2 className='absolute z-0 text-[18vw] opacity-15 pointer-events-none'>TRY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ME!</h2>
+        <div className='flex flex-col z-10 w-[80%] xl:w-[40%] p-[2vw] bg-white border-[0.15vw] border-black drop-shadow-2xl'>
+          <div className='flex flex-col w-full border-[0.15vw] border-black mb-[1vw]'>
+            <div className='w-full h-[2vw] p-[0.5vw] bg-white' readonly>
+              <p className='text-[1vw] text-right overflow-x-auto'>{firstValue} {operationSwitch(operation)} {secondValue}</p>
+            </div>
+            <input type="text" ref={inputRef} value={currentValue} className='w-full h-[4vw] p-[0.5vw] mb-[1vw] text-[3vw] text-right overflow-x-auto pointer-events-none' readonly/>
           </div>
-          <input type="text" ref={inputRef} value={currentValue} className='w-full h-[4vw] p-[0.5vw] mb-[1vw] text-[3vw] text-right overflow-x-auto pointer-events-none' readonly/>
           <table className='w-full'>
             <tr className='w-full'>
-              <td className='w-[25%] h-[5vw]'><button id='btn-ce' onClick={clearAllValues} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>CE</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-c' onClick={clearCurrentValue} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>C</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-backspace' onClick={removeLastCharacter} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>&lt;-</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-divide' onClick={() => performOperation('DIVIDE')} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>÷</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-ce' onClick={clearAllValues} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>CE</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-c' onClick={clearCurrentValue} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>C</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-backspace' onClick={removeLastCharacter} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>&lt;-</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-divide' onClick={() => performOperation('DIVIDE')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>÷</button></td>
             </tr>
             <tr className='w-full'>
-              <td className='w-[25%] h-[5vw]'><button id='btn-7' onClick={() => appendCurrentValue('7')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>7</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-8' onClick={() => appendCurrentValue('8')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>8</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-9' onClick={() => appendCurrentValue('9')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>9</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-multiply' onClick={() => performOperation('MULTIPLY')} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>*</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-7' onClick={() => appendCurrentValue('7')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>7</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-8' onClick={() => appendCurrentValue('8')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>8</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-9' onClick={() => appendCurrentValue('9')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>9</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-multiply' onClick={() => performOperation('MULTIPLY')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>*</button></td>
             </tr>
             <tr className='w-full'>
-              <td className='w-[25%] h-[5vw]'><button id='btn-4' onClick={() => appendCurrentValue('4')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>4</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-5' onClick={() => appendCurrentValue('5')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>5</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-6' onClick={() => appendCurrentValue('6')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>6</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-subtract' onClick={() => performOperation('SUBTRACT')} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>-</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-4' onClick={() => appendCurrentValue('4')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>4</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-5' onClick={() => appendCurrentValue('5')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>5</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-6' onClick={() => appendCurrentValue('6')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>6</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-subtract' onClick={() => performOperation('SUBTRACT')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>-</button></td>
             </tr>
             <tr className='w-full'>
-              <td className='w-[25%] h-[5vw]'><button id='btn-1' onClick={() => appendCurrentValue('1')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>1</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-2' onClick={() => appendCurrentValue('2')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>2</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-3' onClick={() => appendCurrentValue('3')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-700 transition-colors duration-300'>3</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-add' onClick={() => performOperation('ADD')} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>+</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-1' onClick={() => appendCurrentValue('1')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>1</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-2' onClick={() => appendCurrentValue('2')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>2</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-3' onClick={() => appendCurrentValue('3')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>3</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-add' onClick={() => performOperation('ADD')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>+</button></td>
             </tr>
             <tr className='w-full'>
-              <td className='w-[25%] h-[5vw]'><button onClick={addPositiveNegative} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-800 transition-colors duration-300'>+/-</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-0' onClick={() => appendCurrentValue('0')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-800 transition-colors duration-300'>0</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-dot' onClick={() => appendCurrentValue('.')} className='w-full h-full text-[1.5vw] text-white bg-gray-500 hover:bg-gray-800 transition-colors duration-300'>.</button></td>
-              <td className='w-[25%] h-[5vw]'><button id='btn-equal' onClick={operate} className='w-full h-full text-[1.5vw] text-white bg-gray-600 hover:bg-gray-800 transition-colors duration-300'>=</button></td>
+              <td className='w-[25%] h-[5vw]'><button onClick={addPositiveNegative} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>+/-</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-0' onClick={() => appendCurrentValue('0')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>0</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-dot' onClick={() => appendCurrentValue('.')} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-600 transition-colors duration-300'>.</button></td>
+              <td className='w-[25%] h-[5vw]'><button id='btn-equal' onClick={operate} className='w-full h-full text-[1.5vw] text-black bg-white border-[0.15vw] border-black hover:text-white hover:bg-gray-800 transition-colors duration-300'>=</button></td>
             </tr>
           </table>
         </div>
