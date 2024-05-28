@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1, p, input {
+    font-family: "Reddit Mono";
+}
+
+button {
+    font-family: "Exo 2";
+    transition: background-color 0.1s ease;
+}
+
+.button-pressed-numbers {
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.button-pressed-operations {
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
