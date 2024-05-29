@@ -222,7 +222,7 @@ function App() {
       </div>
 
       
-      <div id='container' className={`flex flex-col relative transition-all duration-300 ease-in-out ${hideBackground ? 'bg-transparent' : 'bg-white'}`}>
+      <div id='container' className={`flex flex-col relative h-[100vh] transition-all duration-300 ease-in-out ${hideBackground ? 'bg-transparent' : 'bg-white'}`}>
         <div className='h-[4.5vh]'/>
 
         <div className='flex w-full z-50 relative justify-center items-center'>
