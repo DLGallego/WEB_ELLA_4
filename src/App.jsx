@@ -118,6 +118,7 @@ function App() {
         if (second === 0) {
           setCurrentValue('Cannot divide by 0');
           setFinished(true);
+          setTimeout(() => clearAllValues(), 800);
           return;
         } else {
           result = first / second; 
